@@ -31,8 +31,7 @@
 
             .button1 {
                 border-radius: 5px;
-                border: 1px solid #80CF31;
-                background-color: #80CF31;
+                border: 1px solid #28A745;
                 color: #FFFFFF;
                 font-size: 14px;
                 font-weight: normal;
@@ -126,7 +125,7 @@
             }
 
             button:hover {
-                opacity: 0.8;
+                opacity: 0.7;
             }
 
             .overlay-right {
@@ -157,15 +156,15 @@
     <body>
         <div class="container1" id="container">
             <div class="form-container log-in-container">
-                <form action="#" class="form1">
+                <form action="<?= base_url();?>Welcome/Login/" method="post" class="form1">
                     <h1>Selamat Datang di MediStore</h1>
-                    <input class="input1" type="email" placeholder="Email"/>
-                    <input class="input1" type="password" placeholder="Password"/><br>
-                    <button class="button1">Login</button>
+                    <?php if(isset($error_msg)) { ?>
+                        <div class="alert alert-danger" role="alert"> <?= $error_msg ?> </div>
+                    <?php } ?>
+                    <input class="input1" name="uname" type="text" placeholder="Username" required="required">
+                    <input class="input1" name="pw" type="password" placeholder="Password" required="required"><br>
+                    <button class="button1 btn-success ">Login</button>
                     <label>
-                            <input type="checkbox" id="check" checked="checked" name="remember">
-                            Remember Me
-                    </label>
                 </form>
             </div>
             <div class="form-container log-in-container bground overlay-container overlay-right"></div>

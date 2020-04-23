@@ -19,20 +19,72 @@ class Welcome extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+
+	function __construct(){
+		parent::__construct();
+		$this->load->model("m_Login");
+	}
+
+	public function index(){
 		// $this->load->view('welcome_message');
 		$this->load->view('Users/Template/header');
 		$this->load->view('Users/Home/Home');
-		//$this->load->view('Users/Register/Register');
 	}
+
 	public function Login(){
-		$this->load->view('Users/Template/header');
-		// $this->load->view('Users/Home/Home');
-		$this->load->view('Users/Login/Login');
+
+		//$message="Username atau Password yang Anda Masukkan Salah";
+
+		if ($this->input->method() == 'post') {
+			$data = ['username' => $this->input->post('uname'), 'password' => $this->input->post('pw')];
+			
+			if ($this->m_Login->login($data)) {
+					$this->session->set_userdata('username', $data['username']);
+                	redirect('/');
+            }
+            else {
+				$this->load->view('Users/Template/header');
+                $this->load->view('Users/Login/Login', ['error_msg' => 'Username atau Password yang Anda Masukkan Salah']);
+            }
+		}
+
+		else {
+			$this->load->view('Users/Template/header');
+			$this->load->view('Users/Login/Login');
+		}
+		
 	}
-	public function SignUp(){
-		$this->load->view('Users/Template/header');
-		$this->load->view('Users/Signup/Signup');
+
+	public function Signup(){
+
+		if ($this->input->method() == 'post') {
+			$data = ['nama' => $this->input->post('nama'), 'username' => $this->input->post('uname'), 'password' => $this->input->post('pw'), 'status' => 0];
+
+			if ($this->m_Login->signup($data)) {
+				$this->session->set_userdata('username', $data['username']);
+                redirect('/');
+            } 
+            else {
+				$this->load->view('Users/Template/header');
+                $this->load->view('Users/Login/Login', ['error_msg' => 'Username atau Password yang Anda Masukkan Salah']);
+            }
+		}
+
+		else {
+			$this->load->view('Users/Template/header');
+			$this->load->view('Users/Signup/Signup');
+		}
+	}
+
+	public function Cart(){
+		// $this->load->view('welcome_message');
+		//$this->load->view('Admin/header');
+		$this->load->view('Cart/crud_cart');
+	}
+
+	public function Admin(){
+		// $this->load->view('welcome_message');
+		//$this->load->view('Admin/header');
+		$this->load->view('Admin/crud_user');
 	}
 }

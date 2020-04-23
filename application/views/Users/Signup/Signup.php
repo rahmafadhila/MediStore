@@ -31,8 +31,7 @@
 
             .button1 {
                 border-radius: 5px;
-                border: 1px solid #80CF31;
-                background-color: #80CF31;
+                border: 1px solid #28A745;
                 color: #FFFFFF;
                 font-size: 14px;
                 font-weight: normal;
@@ -126,7 +125,7 @@
             }
 
             button:hover {
-                opacity: 0.8;
+                opacity: 0.7;
             }
 
             .overlay-right {
@@ -152,17 +151,13 @@
     <body>
         <div class="container1" id="container">
             <div class="form-container sign-up-container">
-                <form action="#" class="form1">
+                <form action="<?= base_url();?>Welcome/Signup/" method="post" class="form1">
                     <h1>Masukkan Identitas Anda</h1>
-                    <input class="input1" type="email" placeholder="Email"/>
-                    <input class="input1" type="password" placeholder="Password"/>
-                    <input class="input1" type="date" id="birthday" name="birthday">
-                    <select class="input1" name="Gender">
-                        <option value="volvo" selected>Jenis Kelamin</option>
-                        <option value="saab">Pria</option>
-                        <option value="fiat">Wanita</option>
-                    </select><br>
-                    <button class="button1">Sign Up</button>
+                    <input class="input1" name="nama" type="text" placeholder="Nama" required="required">
+                    <input class="input1" name="uname" type="text" placeholder="Username" required="required">
+                    <input class="input1" name="pw" type="password" placeholder="Password" required="required">
+                    <br>
+                    <button class="button1 btn-success">Sign Up</button>
                 </form>
             </div>
             <div class="form-container log-in-container bground overlay-container overlay-right"></div>
