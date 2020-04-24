@@ -20,20 +20,18 @@ class Welcome extends CI_Controller
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	function __construct(){
+	function __construct() {
 		parent::__construct();
 		$this->load->model("m_Login");
 	}
 
-	public function index(){
+	public function index() {
 		// $this->load->view('welcome_message');
 		$this->load->view('Users/Template/header');
 		$this->load->view('Users/Home/Home');
 	}
 
-	public function Login(){
-
-		//$message="Username atau Password yang Anda Masukkan Salah";
+	public function Login() {
 
 		if ($this->input->method() == 'post') {
 			$data = ['username' => $this->input->post('uname'), 'password' => $this->input->post('pw')];
@@ -55,10 +53,14 @@ class Welcome extends CI_Controller
 		
 	}
 
-	public function Signup(){
+	public function Signup() {
 
 		if ($this->input->method() == 'post') {
-			$data = ['nama' => $this->input->post('nama'), 'username' => $this->input->post('uname'), 'password' => $this->input->post('pw'), 'status' => 0];
+			$data = [
+				'nama' => $this->input->post('nama'), 
+				'username' => $this->input->post('uname'), 
+				'password' => $this->input->post('pw'), 
+				'status' => 0];
 
 			if ($this->m_Login->signup($data)) {
 				$this->session->set_userdata('username', $data['username']);
@@ -76,15 +78,48 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function Cart(){
+	public function Cart() {
 		// $this->load->view('welcome_message');
 		//$this->load->view('Admin/header');
 		$this->load->view('Cart/crud_cart');
 	}
 
-	public function Admin(){
+	public function Adminmm() {
 		// $this->load->view('welcome_message');
 		//$this->load->view('Admin/header');
 		$this->load->view('Admin/crud_user');
+	}
+
+	public function Admin_users() {
+		
+		$data9= $this->m_Login->GetAllUser();
+		$this->load->view('Admin/crud_user',['datauser'=>$data9]);
+		
+	}
+
+	public function hapususers($id) {
+
+		if(!isset($id)) show_404();
+		var_dump($id);
+		if($this->m_Login->hapus_User($id)) {
+			redirect('welcome/Admin_users');
+		}
+	}
+
+	public function edit_users(){
+		$id = $this->input->post('id', true);
+
+		$data = [
+			'nama' => $this->input->post('nama'), 
+			'username' => $this->input->post('username'), 
+			'password' => $this->input->post('password'), 
+			'status' => 0];
+
+		if ($this->m_Login->edit_Users($id, $data)) {
+			redirect('/welcome/Admin_users');
+		}
+		else {
+			redirect('/');
+		}
 	}
 }
