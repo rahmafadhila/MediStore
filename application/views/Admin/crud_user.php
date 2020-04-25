@@ -204,6 +204,7 @@ $this->load->view('Admin/header');
                                 <th scope="col">Nama</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Password</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -215,6 +216,7 @@ $this->load->view('Admin/header');
                                 <td id="margin"><?php echo $d->nama?></td>
                                 <td id="margin"><?php echo $d->username ?></td>
                                 <td id="margin"><?php echo $d->password ?></td>
+                                <td id="margin"><?php echo $d->status ?></td>
                                 <td id="margin">
                                     <button
                                         type="button"
