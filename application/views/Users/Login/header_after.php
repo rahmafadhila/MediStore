@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link
@@ -165,26 +166,27 @@
                 color: #ecdbff;
                 background-color: #7c75e7;
             }
+            i{
+                color: white;
+                margin-left:5;
+                margin-right: 5; 
+            }
+            .fa-shopping-cart{
+                size:5px;
+            }
+            a{
+                color: white;
+            }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" id="awal" href="<?= base_url();?>Admin/">MediStore</a>
+            <a class="navbar-brand" id="awal" href="<?= base_url();?>Admin">MediStore</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <span class="sr-only">(current)</span></a>
+                            <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="#"></a>
@@ -194,22 +196,12 @@
                 </ul>
                 <ul class="navbar-nav  mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>Welcome/info">Info</a>
+                        <a class="nav-link" href="<?= base_url();?>/After">Home</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav  mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>">Home</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav  mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>Welcome/Login/">Log In</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav  mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>Welcome/SignUp/">Sign Up</a>
+                        <a class="nav-link" href="<?= base_url();?>">Logout</a>
                     </li>
                 </ul>
             </div>
