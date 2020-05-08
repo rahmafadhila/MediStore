@@ -1,14 +1,8 @@
 <?php
-<<<<<<< HEAD
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Welcome extends CI_Controller {
-=======
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 {
->>>>>>> 5c28b6b... Update Tubes
 
 	/**
 	 * Index Page for this controller.
@@ -25,13 +19,6 @@ class Welcome extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-<<<<<<< HEAD
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
-}
-=======
 
 	function __construct() {
 		parent::__construct();
@@ -135,4 +122,3 @@ class Welcome extends CI_Controller
 		//$this->load->view('Users/Author/ViewAuthor');
 	}
 }
->>>>>>> 5c28b6b... Update Tubes
