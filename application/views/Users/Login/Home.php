@@ -267,7 +267,6 @@
             <script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
             <script type="text/javascript">
                 $(document).ready(function () {
-                    // AJAX
 
                     $('.tambah_cart').click(function () {
                         var produk_id = $(this).data("idproduk");
@@ -289,12 +288,12 @@
                         });
                     });
 
-                    // Load shopping cart
+
                     $('#cart').load("<?php echo base_url();?>index.php/cart/load_cart");
 
                     //Hapus Item Cart
                     $(document).on('click', '.hapus_cart', function () {
-                        var row_id = $(this).attr("id"); //mengambil row_id dari artibut id
+                        var row_id = $(this).attr("id"); 
                         $.ajax({
                             url: "<?php echo base_url();?>catalog/hapus_cart",
                             method: "POST",
@@ -308,7 +307,7 @@
                     });
 
                     $(document).on('click', '.clear', function () {
-                        var row_id = $(this).attr("id"); //mengambil row_id dari artibut id
+                        var row_id = $(this).attr("id"); 
                         $.ajax({
                             url: "<?php echo base_url();?>catalog/clear",
                             method: "POST",
