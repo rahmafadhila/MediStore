@@ -179,7 +179,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" id="awal">MediStore</a>
+            <a class="navbar-brand" id="awal" href="<?= base_url();?>After">MediStore</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
@@ -194,12 +194,12 @@
                 </ul>
                 <ul class="navbar-nav  mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>Welcome/Admin/">Product</a>
+                        <a class="nav-link" href="<?= base_url();?>Admin/">Product</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav  mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url();?>Welcome/ViewUsers/">Users</a>
+                        <a class="nav-link" href="<?= base_url();?>Welcome/Admin_users/">Users</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav  mt-2 mt-lg-0">

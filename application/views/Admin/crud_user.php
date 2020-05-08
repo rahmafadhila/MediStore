@@ -260,7 +260,7 @@ $this->load->view('Admin/header');
                                             <input type="text" name="nama" class="form-control" value="<?php echo $d->nama?>"><br>
                                             <div class="topic-title">Username</div>
                                             <input type="text" class="form-control" name="username" value="<?php echo $d->username ?>"><br>
-                                            <div class="topic-title">Username</div>
+                                            <div class="topic-title">Password</div>
                                             <input type="text" class="form-control" name="password" value="<?php echo $d->password ?>">
                                         </div>
 

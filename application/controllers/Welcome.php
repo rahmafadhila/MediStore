@@ -23,22 +23,26 @@ class Welcome extends CI_Controller
 	function __construct() {
 		parent::__construct();
 		$this->load->model("m_Login");
+		$this->load->model("m_product");
 	}
 
 	public function index() {
 		// $this->load->view('welcome_message');
 		$this->load->view('Users/Template/header');
-		$this->load->view('Users/Home/Home');
+		//$this->load->view('Users/Home/Home');
+		$dataproduct= $this->m_product->GetProduct();
+		$this->load->view('Users/Home/Home',['dataproduct'=>$dataproduct]);
 	}
 
 	public function Login() {
 
 		if ($this->input->method() == 'post') {
-			$data = ['username' => $this->input->post('uname'), 'password' => $this->input->post('pw')];
+			$data = ['username' => $this->input->post('uname'), 
+					 'password' => $this->input->post('pw')];
 			
 			if ($this->m_Login->login($data)) {
 					$this->session->set_userdata('username', $data['username']);
-                	redirect('/');
+                	redirect('/After');
             }
             else {
 				$this->load->view('Users/Template/header');
@@ -78,18 +82,6 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function Cart() {
-		// $this->load->view('welcome_message');
-		//$this->load->view('Admin/header');
-		$this->load->view('Cart/crud_cart');
-	}
-
-	public function Adminmm() {
-		// $this->load->view('welcome_message');
-		//$this->load->view('Admin/header');
-		$this->load->view('Admin/crud_user');
-	}
-
 	public function Admin_users() {
 		
 		$data9= $this->m_Login->GetAllUser();
@@ -106,20 +98,27 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function edit_users(){
+	public function edit_users() {
+
 		$id = $this->input->post('id', true);
-
-		$data = [
-			'nama' => $this->input->post('nama'), 
-			'username' => $this->input->post('username'), 
-			'password' => $this->input->post('password'), 
-			'status' => 0];
-
+		$data = ['nama' => $this->input->post('nama'), 'username' => $this->input->post('username'), 'password' => $this->input->post('password'), 'status' => 0];
 		if ($this->m_Login->edit_Users($id, $data)) {
-			redirect('/welcome/Admin_users');
-		}
-		else {
+			redirect('/Welcome/Admin_users');
+		} else {
 			redirect('/');
 		}
+	}
+
+	public function info()
+	{
+		$url = "./application/views/Users/json/biodata.json";
+		$get_url = file_get_contents($url);
+		$data = json_decode($get_url);
+
+		$data_array = array(
+			'infodata' => $data
+		);
+		$this->load->view('Users/json/info', $data_array);
+		//$this->load->view('Users/Author/ViewAuthor');
 	}
 }

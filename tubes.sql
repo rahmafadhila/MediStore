@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Apr 2020 pada 21.21
+-- Waktu pembuatan: 08 Bulan Mei 2020 pada 07.37
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -25,44 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cart`
---
-
-CREATE TABLE `cart` (
-  `id_cart` int(11) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
-  `productname` varchar(50) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `jumlah` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `product`
---
-
-CREATE TABLE `product` (
-  `id_product` int(11) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
-  `product_name` varchar(50) NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `product`
---
-
-INSERT INTO `product` (`id_product`, `gambar`, `product_name`, `harga`) VALUES
-(1, 'Termometer-Klinis.png', 'Termometer Klinis ', 30000),
-(2, 'kursi roda.png', 'Kursi Roda ', 900000),
-(3, 'tongkat.png', 'Tongkat', 100000),
-(4, 'tens.png', 'Tensi Darah', 450000),
-(5, 'timbangan.png', 'Timbangan Badan', 85000);
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `users`
 --
 
@@ -79,23 +41,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `nama`, `username`, `password`, `status`) VALUES
-(1, 'Rahma Fadhila', 'rahmafma', '123', 1);
+(1, 'Rahma Fadhila', 'rahmafma', '123', 1),
+(3, 'sukma', 'sukmadeel', '12345', 0),
+(5, 'Rizka', 'rizkamd', '123', 0);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id_cart`);
-
---
--- Indeks untuk tabel `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id_product`);
 
 --
 -- Indeks untuk tabel `users`
@@ -108,16 +60,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `product`
---
-ALTER TABLE `product`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_users` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
