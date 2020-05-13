@@ -21,10 +21,6 @@ $this->load->view('Admin/header');
                         margin: 0;
                     }
 
-                    #detail {
-                        margin: 0 0 0 40%;
-                    }
-
                     .btn-danger {
                         margin-left: 3%;
 
@@ -59,12 +55,6 @@ $this->load->view('Admin/header');
                     font-weight: normal;
                     font-size: 18px;
                     line-height: 25px;
-                }
-
-                .roundedcircle {
-                    width: 45px;
-                    height: 45px;
-                    cursor: pointer;
                 }
 
                 #search {
@@ -113,21 +103,6 @@ $this->load->view('Admin/header');
                     transform: translate(0%, 10%);
                 }
 
-                .detail {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50px;
-                    background: #FFFFFF;
-                    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-                }
-
-                #detail {
-                    width: 15%;
-                    margin-top: 45%;
-                    margin-left: 40%;
-                    transform: translate(0%, -5%);
-                }
-
                 #tittle {
                     font-family: Calibri;
                     font-style: normal;
@@ -157,13 +132,8 @@ $this->load->view('Admin/header');
                     width: 80%;
                 }
 
-                #inputan {
+                #masukan {
                     margin-top: 5%;
-                }
-
-                .desc,
-                textarea {
-                    margin-left: 10%;
                 }
 
                 textarea {
@@ -255,7 +225,7 @@ $this->load->view('Admin/header');
                                                 src="<?= base_url('assets/upload.png') ?>"
                                                 class="roundedcircle d-block"/>
                                         </div>
-                                        <div class="col-md-7" id="inputan">
+                                        <div class="col-md-7" id="masukan">
                                             <div class="topic-title">Nama Produk</div>
                                             <input type="text" name="product_name" class="form-control">
                                             <div class="topic-title">Harga</div>

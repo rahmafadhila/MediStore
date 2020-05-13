@@ -45,6 +45,7 @@ class Welcome extends CI_Controller
 					$this->session->set_userdata('username', $data['username']);
                 	redirect('/After');
             }
+            
             else {
 
 				$this->load->view('Users/Template/header');
@@ -74,6 +75,7 @@ class Welcome extends CI_Controller
 				$this->session->set_userdata('username', $data['username']);
                 redirect('/');
             } 
+
             else {
 
 				$this->load->view('Users/Template/header');
@@ -125,8 +127,8 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function info()
-	{
+	public function info() {
+
 		$url = "./application/views/Users/json/biodata.json";
 		$get_url = file_get_contents($url);
 		$data = json_decode($get_url);

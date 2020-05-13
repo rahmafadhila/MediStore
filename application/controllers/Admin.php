@@ -56,6 +56,7 @@ class Admin extends CI_Controller
 				$error = array('error' => $this->upload->display_errors());
 				redirect('Welcome');
 			}
+
 			else {
 				redirect('/Admin');
 			}
@@ -107,7 +108,8 @@ class Admin extends CI_Controller
 			if($result) { 
 
 				redirect('/Admin');
-			} else {
+			} 
+			else {
 
 				$error = array('error' => $this->upload->display_errors());
 					redirect('/');

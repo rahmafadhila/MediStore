@@ -52,22 +52,7 @@
             .navbar .navbar-nav .nav-link:not(.disabled):hover {
                 color: #ecdbff;
             }
-            .navbar .navbar-nav .dropdown-menu {
-                background-color: #5b54d6;
-                border-color: #7c75e7;
-            }
-            .navbar .navbar-nav .dropdown-menu .dropdown-item {
-                color: #ecf0f1;
-            }
-            .navbar .navbar-nav .dropdown-menu .dropdown-item.active,
-            .navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
-            .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
-                color: #ecdbff;
-                background-color: #7c75e7;
-            }
-            .navbar .navbar-nav .dropdown-menu .dropdown-divider {
-                border-top-color: #7c75e7;
-            }
+           
             .navbar .navbar-nav .nav-item.active .nav-link,
             .navbar .navbar-nav .nav-item.active .nav-link:focus,
             .navbar .navbar-nav .nav-item.active .nav-link:hover,
@@ -77,108 +62,33 @@
                 color: #ecdbff;
                 background-color: #7c75e7;
             }
+            
             .navbar .navbar-toggle {
                 border-color: #7c75e7;
             }
+
             .navbar .navbar-toggle:focus,
             .navbar .navbar-toggle:hover {
                 background-color: #7c75e7;
             }
-            .navbar .navbar-toggle .navbar-toggler-icon {
-                color: #ecf0f1;
-            }
+
             .navbar .navbar-collapse,
             .navbar .navbar-form {
                 border-color: #ecf0f1;
             }
+
             .navbar .navbar-link {
                 color: #ecf0f1;
             }
+
             .navbar .navbar-link:hover {
                 color: #ecdbff;
             }
 
-            @media (max-width: 575px) {
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
-                    color: #ecf0f1;
-                }
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus,
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover {
-                    color: #ecdbff;
-                }
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                    color: #ecdbff;
-                    background-color: #7c75e7;
-                }
-            }
-
-            @media (max-width: 767px) {
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
-                    color: #ecf0f1;
-                }
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus,
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover {
-                    color: #ecdbff;
-                }
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                    color: #ecdbff;
-                    background-color: #7c75e7;
-                }
-            }
-
-            @media (max-width: 991px) {
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
-                    color: #ecf0f1;
-                }
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus,
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover {
-                    color: #ecdbff;
-                }
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                    color: #ecdbff;
-                    background-color: #7c75e7;
-                }
-            }
-
-            @media (max-width: 1199px) {
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
-                    color: #ecf0f1;
-                }
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus,
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover {
-                    color: #ecdbff;
-                }
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                    color: #ecdbff;
-                    background-color: #7c75e7;
-                }
-            }
-
-            .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-                color: #ecf0f1;
-            }
-            .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus,
-            .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover {
-                color: #ecdbff;
-            }
-            .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                color: #ecdbff;
-                background-color: #7c75e7;
-            }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <a class="navbar-brand" id="awal" href="<?= base_url();?>After">MediStore</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">

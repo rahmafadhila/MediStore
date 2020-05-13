@@ -21,10 +21,6 @@ $this->load->view('Admin/header');
                         margin: 0;
                     }
 
-                    #detail {
-                        margin: 0 0 0 40%;
-                    }
-
                     .btn-danger {
                         margin-left: 3%;
 
@@ -53,18 +49,12 @@ $this->load->view('Admin/header');
                     width: 80%;
                 }
 
-                #product {
+                #user {
                     font-family: Calibri;
                     font-style: normal;
                     font-weight: normal;
                     font-size: 18px;
                     line-height: 25px;
-                }
-
-                .roundedcircle {
-                    width: 45px;
-                    height: 45px;
-                    cursor: pointer;
                 }
 
                 #search {
@@ -121,13 +111,6 @@ $this->load->view('Admin/header');
                     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
                 }
 
-                #detail {
-                    width: 15%;
-                    margin-top: 45%;
-                    margin-left: 40%;
-                    transform: translate(0%, -5%);
-                }
-
                 #tittle {
                     font-family: Calibri;
                     font-style: normal;
@@ -161,11 +144,6 @@ $this->load->view('Admin/header');
                     margin-top: 5%;
                 }
 
-                .desc,
-                textarea {
-                    margin-left: 10%;
-                }
-
                 textarea {
                     margin-bottom: 5%;
                 }
@@ -177,7 +155,7 @@ $this->load->view('Admin/header');
             <div class="container-fluid-0">
                 <div class="container-fluid" id="section0"></div>
                 <div class="container-fluid" id="section1">
-                    <span id="product">Data Users</span>
+                    <span id="user">Data Users</span>
                     <form action="" class="navbar-form">
                         <div class="form-group input-group">
                             <input

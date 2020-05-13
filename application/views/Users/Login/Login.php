@@ -132,21 +132,6 @@
                 right: 0;
             }
 
-            .social-container {
-                margin: 50px 0;
-            }
-
-            .social-container a {
-                border: 1px solid #DDDDDD;
-                border-radius: 50%;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 5px;
-                height: 40px;
-                width: 40px;
-            }
-
             #check{
                 align-items: left;
             }

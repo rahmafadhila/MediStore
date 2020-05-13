@@ -46,11 +46,6 @@
                 width: 100%;
             }
 
-            #min {
-                margin-left: 3%;
-                margin-right: 0;
-            }
-
             #label-section-3:hover{
                 color: black;
                 text-decoration: none;
@@ -84,28 +79,11 @@
                 font-color:#00000;
             }
 
-            #pricerange {
-                width: 100%;
-                margin-bottom: 5%;
-                margin-left: 5%;
-
-            }
-
             #header {
                 margin-bottom: 3%;
                 padding-bottom: 1%;
                 border-bottom: 1px solid #C4C4C4;
 
-            }
-
-            #Tittle {
-                font-family: Calibri;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 22px;
-                line-height: 33px;
-                letter-spacing: 0.02em;
-                color: #000000;
             }
 
             .card {
