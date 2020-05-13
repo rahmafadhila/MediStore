@@ -8,6 +8,35 @@ $this->load->view('Admin/header');
             <title>MediStore | Admin Users</title>
             <style>
 
+                @media screen and (max-width: 767px) {
+                    thead {
+                        display: none;
+                    }
+
+                    td {
+                        display: flex;
+                    }
+
+                    .btn-primary {
+                        margin: 0;
+                    }
+
+                    #detail {
+                        margin: 0 0 0 40%;
+                    }
+
+                    .btn-danger {
+                        margin-left: 3%;
+
+                    }
+
+                    .btn-danger,
+                    .btn-warning {
+                        margin-bottom: 3%;
+                    }
+
+                }
+
                 .my-custom-scrollbar {
                     position: relative;
                     height: 550px;
@@ -63,6 +92,12 @@ $this->load->view('Admin/header');
                     color: #FFFFFF;
                 }
 
+                #NewProduct .btn-primary,
+                .btn-outline-danger {
+                    width: 70%;
+                    margin-bottom: 3%;
+                }
+
                 img {
                     width: 15vh;
                 }
@@ -92,8 +127,6 @@ $this->load->view('Admin/header');
                     margin-left: 40%;
                     transform: translate(0%, -5%);
                 }
-
-                /* add new product */
 
                 #tittle {
                     font-family: Calibri;
@@ -137,49 +170,12 @@ $this->load->view('Admin/header');
                     margin-bottom: 5%;
                 }
 
-                #NewProduct .btn-primary,
-                .btn-outline-danger {
-                    width: 70%;
-                    margin-bottom: 3%;
-                }
-
-                /* media screen */
-
-                @media screen and (max-width: 767px) {
-                    thead {
-                        display: none;
-                    }
-
-                    td {
-                        display: flex;
-                    }
-
-                    .btn-primary {
-                        margin: 0;
-                    }
-
-                    #detail {
-                        margin: 0 0 0 40%;
-                    }
-
-                    .btn-danger {
-                        margin-left: 3%;
-
-                    }
-
-                    .btn-danger,
-                    .btn-warning {
-                        margin-bottom: 3%;
-                    }
-
-                }
             </style>
         </head>
 
         <body>
             <div class="container-fluid-0">
                 <div class="container-fluid" id="section0"></div>
-                <!-- section1 -->
                 <div class="container-fluid" id="section1">
                     <span id="product">Data Users</span>
                     <form action="" class="navbar-form">
@@ -238,8 +234,6 @@ $this->load->view('Admin/header');
                     </table>
                 </div>
 
-
-                <!-- Update Users -->
                 <div class="container" id="NewProduct">
                     <div class="row justify-content-center">
                     <?php $no=1; foreach ($datauser as $d ) {?>

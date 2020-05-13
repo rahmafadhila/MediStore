@@ -21,15 +21,15 @@ class Welcome extends CI_Controller
 	 */
 
 	function __construct() {
+
 		parent::__construct();
 		$this->load->model("m_Login");
 		$this->load->model("m_product");
 	}
 
 	public function index() {
-		// $this->load->view('welcome_message');
+		
 		$this->load->view('Users/Template/header');
-		//$this->load->view('Users/Home/Home');
 		$dataproduct= $this->m_product->GetProduct();
 		$this->load->view('Users/Home/Home',['dataproduct'=>$dataproduct]);
 	}
@@ -41,16 +41,19 @@ class Welcome extends CI_Controller
 					 'password' => $this->input->post('pw')];
 			
 			if ($this->m_Login->login($data)) {
+
 					$this->session->set_userdata('username', $data['username']);
                 	redirect('/After');
             }
             else {
+
 				$this->load->view('Users/Template/header');
                 $this->load->view('Users/Login/Login', ['error_msg' => 'Username atau Password yang Anda Masukkan Salah']);
             }
 		}
 
 		else {
+
 			$this->load->view('Users/Template/header');
 			$this->load->view('Users/Login/Login');
 		}
@@ -67,16 +70,19 @@ class Welcome extends CI_Controller
 				'status' => 0];
 
 			if ($this->m_Login->signup($data)) {
+
 				$this->session->set_userdata('username', $data['username']);
                 redirect('/');
             } 
             else {
+
 				$this->load->view('Users/Template/header');
                 $this->load->view('Users/Login/Login', ['error_msg' => 'Username atau Password yang Anda Masukkan Salah']);
             }
 		}
 
 		else {
+
 			$this->load->view('Users/Template/header');
 			$this->load->view('Users/Signup/Signup');
 		}
@@ -101,10 +107,20 @@ class Welcome extends CI_Controller
 	public function edit_users() {
 
 		$id = $this->input->post('id', true);
-		$data = ['nama' => $this->input->post('nama'), 'username' => $this->input->post('username'), 'password' => $this->input->post('password'), 'status' => 0];
+		$data = [
+			'nama' => $this->input->post('nama'), 
+			'username' => $this->input->post('username'), 
+			'password' => $this->input->post('password'), 
+			'status' => 0
+		];
+
 		if ($this->m_Login->edit_Users($id, $data)) {
+
 			redirect('/Welcome/Admin_users');
-		} else {
+		} 
+
+		else {
+
 			redirect('/');
 		}
 	}
@@ -118,7 +134,7 @@ class Welcome extends CI_Controller
 		$data_array = array(
 			'infodata' => $data
 		);
+		
 		$this->load->view('Users/json/info', $data_array);
-		//$this->load->view('Users/Author/ViewAuthor');
 	}
 }

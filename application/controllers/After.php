@@ -20,14 +20,14 @@ class After extends CI_Controller
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	function __construct() {
+		
 		parent::__construct();
 		$this->load->model("m_Login");
 		$this->load->model("m_product");
 	}
 
-	 public function index()
-	{
-		// $this->load->view('welcome_message');
+	 public function index() {
+
 		$this->load->view('Users/Login/header_after');
 		$dataproduct= $this->m_product->GetProduct();
 		$this->load->view('Users/Login/Home',['dataproduct'=>$dataproduct]);

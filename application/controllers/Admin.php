@@ -41,8 +41,7 @@ class Admin extends CI_Controller
 		
 		if(!$this->upload->do_upload('uploadImage')){
 			$error = array('error' => $this->upload->display_errors());
-			//$this->load->view('Users/Home/Home',$error);
-			redirect('/');
+				redirect('/');
 		} 
 
 		else {
@@ -88,7 +87,7 @@ class Admin extends CI_Controller
 			];
 			$result = $this->m_Product->edit_Product($id, $data);
 			if($result) { 
-				//$this->session->set_flashdata('flash', 'Added success');				
+								
 				redirect('/Admin');
 			}
 			else {
@@ -103,11 +102,13 @@ class Admin extends CI_Controller
 				'product_name' => $this->input->post('product_name'),
 				'harga' => $this->input->post('harga')
 			];
+			
 			$result = $this->m_Product->edit_Product($id, $data);
 			if($result) { 
-				//$this->session->set_flashdata('flash', 'Added success');				
+
 				redirect('/Admin');
 			} else {
+
 				$error = array('error' => $this->upload->display_errors());
 					redirect('/');
 			}

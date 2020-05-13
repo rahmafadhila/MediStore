@@ -291,8 +291,8 @@
 
                     $('#cart').load("<?php echo base_url();?>index.php/cart/load_cart");
 
-                    //Hapus Item Cart
                     $(document).on('click', '.hapus_cart', function () {
+                        
                         var row_id = $(this).attr("id"); 
                         $.ajax({
                             url: "<?php echo base_url();?>catalog/hapus_cart",
@@ -307,6 +307,7 @@
                     });
 
                     $(document).on('click', '.clear', function () {
+
                         var row_id = $(this).attr("id"); 
                         $.ajax({
                             url: "<?php echo base_url();?>catalog/clear",

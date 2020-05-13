@@ -19,19 +19,19 @@ class catalog extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
+	function __construct() {
 		parent::__construct();
 		$this->load->model("m_product");
 	}
-	public function index()
-	{
-		// $this->load->view('welcome_message');
-		// $this->load->view('Users/Template/header');
+
+	public function index() {
+	
 		$dataproduct = $this->m_product->GetProduct();
 		$this->load->view('Users/Login/Home',['dataproduct'=>$dataproduct]);
 	}
 	
-	function tambahkan_cart(){ //fungsi Add To Cart
+	function tambahkan_cart() { 
+
 		$data = array(
 			'id' => $this->input->post('produk_id'), 
 			'name' => $this->input->post('produk_nama'), 
@@ -39,10 +39,11 @@ class catalog extends CI_Controller
 			'qty' => $this->input->post('jumlah'), 
 		);
 		$this->cart->insert($data);
-		echo $this->tampilkan_cart(); //tampilkan cart setelah added
+		echo $this->tampilkan_cart(); 
 	}
 
-	function tampilkan_cart(){ //Fungsi untuk menampilkan Cart
+	function tampilkan_cart() {
+
 		$output = '';
 		$no = 0;
 		foreach ($this->cart->contents() as $items) {
@@ -66,20 +67,24 @@ class catalog extends CI_Controller
 		return $output;
 	}
 
-	function load_cart(){ //load data cart
+	function load_cart() {
+
 		echo $this->tampilkan_cart();
 	}
 
-	function clear(){
+	function clear() {
+
 		$data = array(
 			'rowid' => $this->input->post('row_id'), 
 			'qty' => 0, 
 		);
+
 		$this->cart->destroy();
 		echo $this->tampilkan_cart();
 	}
 
-	function hapus_cart(){ //fungsi untuk menghapus item cart
+	function hapus_cart() {  
+		
 		$data = array(
 			'rowid' => $this->input->post('row_id'), 
 			'qty' => 0, 
